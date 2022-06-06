@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import ItemDetail from "./ItemDetail";
 import {useParams} from 'react-router-dom';
 
+
 const controler = [
     { id: 1, image: "https://shop.hercules.com/pub/media/catalog/product/cache/f32e6b920edcd12f3fe95d79cda907cf/m/o/monitor5_2000x2000_1.jpg", category: "audio", title: "Hercules Monitor 5", price: "$5,000.00", description: "Optimizados para la producción musical, este atractivo par de altavoces de monitorización activos (2 x 80 W) mejorará el nivel de tu estudio doméstico con una reproducción de audio plena y potente." },
     { id: 2, image: "https://shop.hercules.com/pub/media/catalog/product/cache/f32e6b920edcd12f3fe95d79cda907cf/d/j/djspeaker32party_2_3.jpg" , category: "audio", title: "DJSpeaker 32 Party", price: "$6,000", description: "Los altavoces Hercules DJSpeaker 32 Party animan tus fiestas con sonido de calidad y un sistema de luces LED que crea un ambiente lleno de color. Cada altavoz incorpora una cúpula luminosa con efectos de llama y proyector que hacen que tu evento sea único. Los altavoces, que se controlan fácilmente por medio del mando a distancia por infrarrojos incluido, te permiten elegir entre 4 modos de iluminación distintos: ¡que no decaiga el ambiente en tu próxima fiesta de cumpleaños, juerga de Año Nuevo o cualquier reunión espontánea!"},
@@ -28,7 +29,10 @@ export const ItemDetailContainer = () => {
 
 
     return (
-        <ItemDetail data={data}/>
+        <div className="container">
+            <ItemDetail data={data}/>
+        </div>
+        
     );
 }
 
