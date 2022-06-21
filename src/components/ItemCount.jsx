@@ -21,7 +21,7 @@ export const ItemCount = ({initial, stock, onAdd}) => {
             <span>{count}</span>
             <button disabled= {count >= stock} onClick={increase}>+</button>
             <div>
-                <button disabled={stock <= 0} onClick={() => onAdd(count)} class="btn btn-dark">AÑADIR A LA CESTA</button>
+                <button disabled={stock <= 0} onClick={() => onAdd(count)} className="btn btn-dark">AÑADIR A LA CESTA</button>
             </div>
 
         </div>

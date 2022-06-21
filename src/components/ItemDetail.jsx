@@ -25,7 +25,7 @@ export const ItemDetail = ({data}) => {
                     <h2>{data.price}</h2>
                     {
                         goToCart
-                        ? <Link to='/cart' type="button" class="btn btn-danger">IR A PAGO</Link>
+                        ? <Link to='/cart' type="button" className="btn btn-danger">IR A PAGO</Link>
                         :<ItemCount initial={1} stock={5} onAdd={onAdd}/>
                     }
 

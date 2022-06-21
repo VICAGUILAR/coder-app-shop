@@ -1,10 +1,10 @@
-import React, { Children, useState, useContext } from "react";
-import Item from "./components/Item";
+import React, { children, useState, useContext } from "react";
+//import Item from "./components/Item";
 const CartContext = React.createContext([]);
 
 export const useCartContext = () => useContext(CartContext);
 
-const CartProvider = ({Children}) => {
+const CartProvider = ({children}) => {
     const [cart, setCart] = useState ([]);
 
 
@@ -14,6 +14,8 @@ const CartProvider = ({Children}) => {
         setCart(newCart);
         
     }
+
+    console.log('carrito:', cart);
 
     const clearCart = () => setCart([]);
 
@@ -31,7 +33,7 @@ const CartProvider = ({Children}) => {
         removeProduct,
         addProduct
         }}>
-            {Children}
+            {children}
         </CartContext.Provider>
     )
 }
