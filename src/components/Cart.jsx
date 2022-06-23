@@ -1,8 +1,30 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { useCartContext } from "../CartContext";
+import ItemCart from "./ItemCart";
 
 const Cart = () => {
+    const {cart, totalPrice} = useCartContext();
+
+    if (cart.length === 0) {
+        return (
+            <>
+                <p>No hay elementos en el carrito</p>
+                <Link to='/'>Hacer compras</Link>
+            </>
+        );
+    }
+    
     return(
-        <h1>Carrito de compras</h1>
+        <>
+        {
+            cart.map(controler => <ItemCart key={controler.id} controler={controler}/>)
+        }
+        <p>
+            total: {totalPrice()}
+        </p>
+        </>
+        
     );
 }
 
