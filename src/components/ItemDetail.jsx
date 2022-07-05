@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
 import { useCartContext } from "../CartContext";
+import Swal from "sweetalert2";
 
 export const ItemDetail = ({data}) => {
 
@@ -10,7 +11,7 @@ export const ItemDetail = ({data}) => {
     const {addProduct} = useCartContext();
 
     const onAdd = (quantity) => {
-        alert(`Agregaste al carrito ${quantity} productos.`);
+        Swal.fire(`Agregaste al carrito ${quantity} productos.`);
         setGoToCart(true);
         addProduct(data, quantity);
     }

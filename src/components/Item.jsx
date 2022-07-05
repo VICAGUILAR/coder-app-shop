@@ -8,7 +8,7 @@ const Item = ({info}) => {
 
     return (
         <Link to={`/detalle/${info.id}`} className="controler">
-            <img src={info.image}/>
+            <img src={info.image} alt=""/>
             <p>{info.title}</p>
 
         </Link>
